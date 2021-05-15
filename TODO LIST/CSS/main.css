@@ -359,6 +359,7 @@ form button {
   right: 20%;
   display: none;
   max-width: 150px;
+  max-height: 100px;
 }
 
 .deleteMsg {
@@ -371,6 +372,7 @@ form button {
   right: 0;
   display: none;
   max-width: 150px;
+  max-height: 100px;
 }
 
 .msg-prompt {
