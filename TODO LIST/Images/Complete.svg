@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13">
+  <g id="Complete" transform="translate(-718.811 -647.146)">
+    <ellipse id="Check" cx="8" cy="6.5" rx="8" ry="6.5" transform="translate(718.811 647.146)" fill="#fff"/>
+    <path id="check-solid" d="M2.655,70.813.115,68.273a.391.391,0,0,1,0-.553l.553-.553a.391.391,0,0,1,.553,0l1.711,1.711L6.6,65.213a.391.391,0,0,1,.553,0l.553.553a.391.391,0,0,1,0,.553l-4.495,4.5a.391.391,0,0,1-.553,0Z" transform="translate(722.902 585.94)" fill="#63f88a"/>
+  </g>
+</svg>

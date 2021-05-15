@@ -1,0 +1,582 @@
+/* Resets, Fonts, Etc.. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-cont {
+  height: 100vh;
+  background: linear-gradient(to top left, #ecaffb, #f8afaf);
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+.fa-cog {
+  font-size: 2em;
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* SIDE BAR */
+.sidebar {
+  width: 0%;
+  background: #fbd6d7;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-in-out;
+}
+
+.sidebar button {
+  width: 73%;
+  border: none;
+  outline: none;
+  margin: 1em;
+  height: 3rem;
+  background: rgba(255, 255, 255, 59%);
+  border-radius: 34px;
+  font-weight: 700;
+  color: #3b3b3b;
+  font-size: 1em;
+  max-width: 500px;
+  padding: 0em 2em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.816);
+}
+
+.sidebar button:nth-child(1) {
+  text-align: center;
+  margin-top: 12em;
+}
+
+.fa-trash,
+.fa-check {
+  position: relative;
+  left: 0.5em;
+  font-size: 1.5em;
+}
+
+.fa-trash {
+  color: #f58787;
+}
+
+.fa-check {
+  left: 1.4em;
+  color: #63f88a;
+}
+
+.logo {
+  margin-top: 1em;
+  color: #fffcfc;
+  font-size: 3em;
+}
+
+.sub {
+  color: #858585;
+}
+
+/* Todo Items And Lists */
+.main-txt {
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 80%;
+  font-size: 2.5em;
+  transform: translate(-50%, -40%);
+}
+
+form {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+form input,
+form button {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  background: white;
+  margin: 0em 0.1em;
+}
+
+.input {
+  width: 90%;
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+.add-btn {
+  padding: 0em 0.4em;
+  font-size: 1.5em;
+  color: #dcd3d3;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.add-btn:hover {
+  background: #f58787;
+  color: white;
+}
+
+.fa-plus {
+  pointer-events: none;
+}
+
+.todo-cont {
+  width: 70%;
+  height: 35vh;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 500px;
+}
+.delete-cont {
+  width: 70%;
+  height: 35vh;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  max-width: 500px;
+}
+.completed-cont {
+  width: 70%;
+  height: 35vh;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  max-width: 500px;
+}
+
+.error-msg {
+  width: 65%;
+  background: white;
+  text-align: center;
+  border-top-left-radius: 19px;
+  padding: 1em;
+  border-bottom-left-radius: 19px;
+  font-size: 0.9em;
+  color: #f35252;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  transition: all 0.2s ease-in;
+  top: 20%;
+  transform: translateX(100%);
+  max-width: 200px;
+}
+
+.fa-exclamation-circle {
+  position: relative;
+  top: 0.5em;
+  left: -0.3em;
+  color: #f35252;
+  font-size: 1.5rem;
+}
+
+.done,
+.delete {
+  position: relative;
+  padding: 1.1em 1.4em;
+  outline: none;
+  border: none;
+  margin: 0.1em;
+  font-size: 1.1em;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.done:hover .fa-check {
+  color: white;
+}
+
+.done:hover {
+  background: #63f88a;
+}
+
+.delete:hover .fa-trash {
+  color: white;
+}
+
+.delete:hover {
+  background: #f58787;
+}
+
+.done .fa-check,
+.delete .fa-trash {
+  position: absolute;
+  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  word-wrap: break-word;
+  margin: 1em 0em;
+  transition: all 0.4s ease-in-out;
+}
+
+.delete-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  word-wrap: break-word;
+  margin: 1em 0em;
+  transition: all 0.4s ease-in-out;
+}
+.completed-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  word-wrap: break-word;
+  margin: 1em 0em;
+  transition: all 0.4s ease-in-out;
+}
+
+.completed-div .todo {
+  padding: 2em;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 44%);
+  font-weight: 700;
+  color: #3b3b3b;
+  font-size: 0.8em;
+  position: relative;
+  width: 100%;
+}
+
+.todo {
+  width: 70%;
+  padding: 2em;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 44%);
+  font-weight: 700;
+  color: #3b3b3b;
+  font-size: 0.8em;
+  position: relative;
+}
+
+.todo::-webkit-scrollbar {
+  width: 5px;
+}
+.todo::-webkit-scrollbar-track {
+  background: #f59c9cb9;
+}
+.todo::-webkit-scrollbar-thumb {
+  background: #f5d8d8b9;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f59c9cb9;
+}
+::-webkit-scrollbar-thumb {
+  background: #f5d8d8b9;
+}
+
+.check-completed {
+  position: absolute;
+  width: 10%;
+  left: 2%;
+  display: none;
+}
+
+.delete-div .done {
+  position: relative;
+  padding: 0.4em 0.9em;
+}
+
+.delete-div .done:hover {
+  color: white;
+  background: rgb(89, 227, 89);
+}
+
+.fa-trash-restore {
+  pointer-events: none;
+}
+
+.restoreMsg {
+  width: 55%;
+  height: 40%;
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  padding: 1em;
+  right: 20%;
+  display: none;
+  max-width: 150px;
+}
+
+.deleteMsg {
+  width: 55%;
+  height: 40%;
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  padding: 1em;
+  right: 0;
+  display: none;
+  max-width: 150px;
+}
+
+.msg-prompt {
+  color: #6b6b6b;
+  font-weight: 700;
+  font-size: 0.55em;
+  text-align: center;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.cancelBtn {
+  color: #818080;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.confirm {
+  padding: 0.2em 0.5em;
+  color: white;
+  font-weight: 700;
+  border: none;
+  font-size: 0.7em;
+  background: #f58787;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.confirmDel {
+  padding: 0.2em 0.5em;
+  color: white;
+  font-weight: 700;
+  border: none;
+  font-size: 0.7em;
+  background: #f58787;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.deleteMsgBtn {
+  padding: 0.2em 0.5em;
+  color: white;
+  font-weight: 700;
+  border: none;
+  font-size: 0.7em;
+  background: #f58787;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quotes {
+  color: #656565;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  display: none;
+}
+
+.notCompleted {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: #4d4d4d43;
+  font-size: 1.5em;
+}
+.notDeleted {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: #4d4d4d43;
+  font-size: 1.5em;
+}
+
+/* ----------------------------------------------------*/
+
+/* ADD CLASSES */
+
+.errorPop {
+  transform: translateX(0%);
+}
+.errorInput {
+  border: 2px solid rgb(245, 73, 73);
+}
+
+.openSidebar {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.deleteFade {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.checkCompletedPop {
+  display: unset;
+}
+
+.checkFade {
+  text-decoration: line-through;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.pop {
+  display: unset;
+}
+.remove {
+  display: none;
+}
+
+.restoreRemove {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.removePointer {
+  pointer-events: none;
+}
+
+/* ADJUSTMENTS */
+
+@media screen and (min-width: 870px) {
+  .openSidebar {
+    width: 30%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 306px) {
+  .sidebar button {
+    font-size: 0.8em;
+  }
+  .msg-prompt {
+    font-size: 0.5em;
+  }
+  .deleteMsgBtn {
+    font-size: 0.6em;
+  }
+  .cancelBtn {
+    font-size: 0.6em;
+  }
+
+  .confirm {
+    font-size: 0.6em;
+  }
+  .confirmDel {
+    font-size: 0.6em;
+  }
+  .todo {
+    padding: 1em;
+  }
+
+  .quotes {
+    font-size: 0.6em;
+  }
+
+  .notCompleted {
+    font-size: 1em;
+  }
+  .notDeleted {
+    font-size: 1em;
+  }
+  @media screen and (max-width: 600px) {
+    .notDeleted {
+      font-size: 0em;
+    }
+  }
+  @media screen and (max-width: 245px) {
+    .sidebar button {
+      font-size: 0.7em;
+    }
+
+    .msg-prompt {
+      font-size: 0.4em;
+    }
+    .deleteMsgBtn {
+      font-size: 0.5em;
+    }
+    .cancelBtn {
+      font-size: 0.5em;
+    }
+
+    .confirm {
+      font-size: 0.5em;
+    }
+    .confirmDel {
+      font-size: 0.5em;
+    }
+    .todo {
+      padding: 0.3em;
+    }
+  }
+}
